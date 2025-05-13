@@ -2,14 +2,12 @@ import axios from 'axios';
 
 const BASE_URL = 'https://www.thesportsdb.com/api/v1/json/3';
 
-export const getLeagueLogo = async (leagueId: string): Promise<string | null> => {
+export const getTeamsByLeagueId = async (leagueId: string) => {
   try {
-    const response = await axios.get(`${BASE_URL}/lookupleague.php?id=${leagueId}`);
-    const league = response.data?.leagues?.[0];
-
-    return league?.strBadge || null;
+    const response = await axios.get(`${BASE_URL}/lookup_all_teams.php?id=${leagueId}`);
+    return response.data?.teams || [];
   } catch (error) {
-    console.error('Failed to fetch league logo:', error);
-    return null;
+    console.error(`Error fetching teams for league ID ${leagueId}:`, error);
+    return [];
   }
 };

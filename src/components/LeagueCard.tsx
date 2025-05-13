@@ -2,18 +2,14 @@ import React from 'react';
 import '../assets/styles/LeagueCard.scss';
 
 interface LeagueCardProps {
-  /** Name of the league to display */
   name: string;
-  /** URL of the league's logo image */
   logoUrl: string;
+  onClick?: () => void;
 }
 
-/**
- * Displays a card for a football league showing its logo and name.
- */
-const LeagueCard: React.FC<LeagueCardProps> = ({ name, logoUrl }) => {
+const LeagueCard: React.FC<LeagueCardProps> = ({ name, logoUrl, onClick }) => {
   return (
-    <div className="league-card">
+    <div className="league-card" onClick={onClick} style={{ cursor: 'pointer' }}>
       <img
         src={logoUrl}
         alt={`${name} logo`}
