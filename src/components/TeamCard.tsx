@@ -1,6 +1,6 @@
 import React from 'react';
-import '../assets/styles/TeamCard.scss';
-import type { Team } from '../models/Team';
+import '../assets/styles/components/TeamCard.scss';
+import type { Team } from '../types/interfaces/Team';
 
 interface TeamCardProps {
   team: Team;

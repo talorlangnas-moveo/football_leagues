@@ -1,5 +1,6 @@
 export interface League {
     id: string;
     name: string;
-    fallbackLogo: string;
+    logoUrl?: string;
+    fallbackLogo?: string; 
 }
