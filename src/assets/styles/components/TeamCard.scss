@@ -1,7 +1,8 @@
 .team-card {
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
   align-items: center;
+  justify-content: space-evenly;
   padding: 1rem;
   border: 1px solid #ccc;
   border-radius: 12px;

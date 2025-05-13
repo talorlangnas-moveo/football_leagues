@@ -1,10 +1,9 @@
-import React, { useState, useEffect } from 'react';
-import '../assets/styles/components/LeagueTab.scss';
-import type { League } from '../types/interfaces/League';
-import type { Team } from '../types/interfaces/Team';
-import { getTeamsByLeagueName } from '../services/team.service';
-import TeamsResults from './TeamsResult';
-
+import React, { useState, useEffect } from "react";
+import type { League } from "../types/interfaces/League";
+import type { Team } from "../types/interfaces/Team";
+import { getTeamsByLeagueName } from "../services/team.service";
+import TeamsResults from "./TeamsResult";
+import "../assets/styles/components/LeagueTab.scss";
 
 interface LeagueTabProps {
   league: League;
@@ -24,7 +23,7 @@ const LeagueTab: React.FC<LeagueTabProps> = ({ league }) => {
         setTeams(data);
       } catch (err) {
         console.error(err);
-        setError('Failed to load teams.');
+        setError("Failed to load teams.");
       } finally {
         setLoading(false);
       }
@@ -34,15 +33,23 @@ const LeagueTab: React.FC<LeagueTabProps> = ({ league }) => {
   }, [league.name]);
 
   return (
-    <div className="league-tab" onClick={() => setExpanded((prev) => !prev)} style={{ cursor: 'pointer' }}>
-      <img src={league.logoUrl} alt={`${league.name} logo`} className="league-tab__logo" />
+    <div
+      className={`league-tab ${expanded ? "expanded" : ""}`}
+      onClick={() => setExpanded((prev) => !prev)}
+      
+    >
+      <img
+        src={league.logoUrl}
+        alt={`${league.name} logo`}
+        className="league-tab__logo"
+      />
       <h4 className="league-tab__name">{league.name}</h4>
 
       {expanded && (
-        <div style={{ marginTop: '1rem' }}>
+        <div className="league-tab__dropdown">
           {loading && <p>Loading teams...</p>}
           {error && <p>{error}</p>}
-          {!loading && !error && <TeamsResults teams={teams} />}
+          {!loading && !error && teams.length > 0 && <TeamsResults teams={teams} />}
         </div>
       )}
     </div>

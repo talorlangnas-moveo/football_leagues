@@ -1,6 +1,6 @@
 .leagues-result {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+  display: flex;
+  justify-content: space-evenly;
   gap: 1rem;
   padding: 1rem;
   justify-items: center;

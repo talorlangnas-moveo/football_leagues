@@ -1,5 +1,6 @@
 .teams-results {
   display: flex;
+  flex-direction: column;
   flex-wrap: wrap;
   gap: 1rem;
   padding: 1rem;

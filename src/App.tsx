@@ -3,7 +3,6 @@ import LeagueLobby from './pages/LeaguesLobby'
 function App() {
   return (
     <div>
-      <h1>Top Football Leagues</h1>
       <LeagueLobby />
     </div>
   );
