@@ -3,7 +3,7 @@ export interface LeagueInfo {
   name: string;
   fallbackLogo: string;
 }
-
+import { League } from '../models/League';
 import premierLeague from '../assets/imges/premierleague.png';
 import laLiga from '../assets/imges/laliga.png';
 import bundesliga from '../assets/imges/bundesliga.png';
