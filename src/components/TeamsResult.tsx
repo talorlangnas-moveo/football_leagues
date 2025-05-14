@@ -1,7 +1,6 @@
 import React from 'react';
 import TeamCard from './TeamCard';
 import type { Team } from '../types/interfaces/Team';
-// import '../assets/styles/components/TeamsResults.scss';
 
 interface TeamsResultsProps {
   teams: Team[];

@@ -1,9 +1,8 @@
 .flex-container {
   display: flex;
-  flex-direction: column;     // ✅ stack children vertically
-  // align-items: center;        // ✅ center horizontally
-  justify-content: flex-start; // ✅ (optional) top align
-  min-height: 100vh;          // optional: make it fill the screen
+  flex-direction: column;     
+  justify-content: flex-start; 
+  min-height: 100vh;          
   padding: 2rem;
 
   h1 {
