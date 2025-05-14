@@ -1,0 +1,58 @@
+.league-tab {
+  width: 100%;
+  max-width: 140px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 0.75rem;
+  background: #fff;
+  border-radius: 0.5rem;
+  transition: transform 0.2s ease-in-out;
+  cursor: pointer;
+  
+  &:hover {
+    transform: translateY(-3px);
+  }
+}
+
+.league-tab__dropdown {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  margin-top: 0.5rem;
+  padding-top: 0.5rem;
+  border-top: 1px solid #ddd;
+  background-color: #fff;
+  border-radius: 6px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.08);
+  transition: opacity 0.3s ease;
+  opacity: 0;
+  animation: dropdownFade 0.5s forwards;
+}
+
+@keyframes dropdownFade {
+  to {
+    opacity: 1;
+  }
+}
+
+
+.league-tab__logo {
+  width: 50px;
+  height: 50px;
+  object-fit: contain;
+  margin-bottom: 0.5rem;
+}
+
+.league-tab__name {
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: #333;
+  text-align: center;
+}
+
+.league-tab:not(.expanded) .league-tab__expandable {
+  max-height: 0;
+  opacity: 0;
+}
